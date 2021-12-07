@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import MenuButton from '../components/MenuButton'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.header}>
           <text>ヘッダー</text>
+          <MenuButton/>
         </div>
         <div>
           <text>エーミールの個人サイト</text>
