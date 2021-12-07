@@ -1,0 +1,51 @@
+@keyframes click-long {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes click-short {
+  0% {
+    width: 50%
+  }
+  100% {
+    width: 0%
+  }
+}
+
+.menuContainer {
+  position: absolute;
+  right: 8%;
+  width: 32px;
+  height: 32px;
+}
+
+.menuBar {
+  width: 100%;
+  height: 1px;
+  background: white;
+  position: relative;
+  margin-top: 10px
+}
+
+.menuBar:nth-child(2) {
+  width: 50%;
+}
+
+.menuBar-clicked {
+  animation-name: click-long;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  height: 1px;
+  background: white;
+  position: relative;
+  margin-top: 10px
+}
+
+.menuBar-clicked:nth-child(2) {
+  animation-name: click-short;
+}
