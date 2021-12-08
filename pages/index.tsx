@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import MenuButton from '../components/MenuButton'
+import MailForm from '../components/MailForm'
+import Gallery from '../components/Gallery'
 
 const Home: NextPage = () => {
   return (
@@ -15,14 +17,15 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.header}>
-          <text>ヘッダー</text>
-          <MenuButton/>
+          <text>永眠</text>
+          <MenuButton />
         </div>
-        <div>
-          <text>エーミールの個人サイト</text>
-        </div>
+        <video autoPlay loop muted src="background.mp4" style={{width: "100%"}} />
+        <Gallery works={[ { imageUrl: "/work1.jpg", title: "泣いてる私も面倒臭がらずに愛してよ" }, { imageUrl: "/work2.jpg", title: "死んでるみたいに生きている" } ]}/>
+        <MailForm />
       </main>
 
+      {/*
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -35,6 +38,7 @@ const Home: NextPage = () => {
           </span>
         </a>
       </footer>
+      */}
     </div>
   )
 }
