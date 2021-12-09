@@ -1,12 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import MenuButton from '../components/MenuButton'
 import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
+import { useState, useEffect } from 'react'
 
 const Home: NextPage = () => {
+  const [ loading, setLoading ] = useState<Boolean>(true)
+  
+  useEffect(() => {
+    window.addEventListener("load", () => setLoading(false))
+  })
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +26,9 @@ const Home: NextPage = () => {
           <text>永眠</text>
           <MenuButton />
         </div>
-        <video autoPlay loop muted src="background.mp4" style={{width: "100%"}} />
+        <div className={loading ? styles["video-conteiner"] : styles["video-container-animated"]}>
+          <video autoPlay loop muted src="background.mp4" className={styles["background-video"]} />
+        </div>
         <Gallery works={[ { imageUrl: "/work1.jpg", title: "泣いてる私も面倒臭がらずに愛してよ" }, { imageUrl: "/work2.jpg", title: "死んでるみたいに生きている" } ]}/>
         <MailForm />
       </main>
