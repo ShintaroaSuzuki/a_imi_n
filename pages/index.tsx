@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
-import MenuButton from '../components/MenuButton'
+import Header from '../components/Header'
 import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
 import Loading from '../components/Loading'
@@ -24,10 +24,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         {loading && <Loading />}
-        <div className={styles.header}>
-          <text>永眠</text>
-          <MenuButton />
-        </div>
+        <Header />
         <div className={loading ? styles["video-conteiner"] : styles["video-container-animated"]}>
           <video autoPlay loop muted src="background.mp4" className={styles["background-video"]} />
         </div>
