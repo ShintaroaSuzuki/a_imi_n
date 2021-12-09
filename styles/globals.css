@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: 'Hina Mincho', serif; 
   background: white;
+  min-height: 100vh;
 }
 
 a {

@@ -5,6 +5,7 @@ import MenuButton from '../components/MenuButton'
 import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
 import { useState, useEffect } from 'react'
+import Loader from 'react-loader-spinner'
 
 const Home: NextPage = () => {
   const [ loading, setLoading ] = useState<Boolean>(true)
@@ -12,6 +13,20 @@ const Home: NextPage = () => {
   useEffect(() => {
     window.addEventListener("load", () => setLoading(false))
   })
+
+  if (loading) {
+    return (
+      <div style={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Loader
+        type="ThreeDots"
+        color="gray"
+        height={80}
+        width={80}
+        timeout={0}
+      />
+      </div>
+    )
+  }
   
   return (
     <div className={styles.container}>
