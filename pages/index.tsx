@@ -45,7 +45,15 @@ const Home: NextPage = () => {
         <div className={loading ? styles["video-conteiner"] : styles["video-container-animated"]}>
           <video autoPlay loop muted src="background.mp4" className={styles["background-video"]} />
         </div>
-        <Gallery works={[ { imageUrl: "/work1.jpg", title: "泣いてる私も面倒臭がらずに愛してよ" }, { imageUrl: "/work2.jpg", title: "死んでるみたいに生きている" } ]}/>
+        <Gallery works={
+            [
+              { imageUrl: "/work1.jpg", title: "泣いてる私も面倒臭がらずに愛してよ" },
+              { imageUrl: "/work2.jpg", title: "死んでるみたいに生きている" },
+              { imageUrl: "/work3.jpg", title: "もう良い子じゃないよ" },
+              { imageUrl: "/work4.jpg", title: "君のためになんか死んでやらない" },
+            ]
+          }
+        />
         <MailForm />
       </main>
 
