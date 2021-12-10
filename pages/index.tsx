@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import MailForm from '../components/MailForm'
@@ -9,9 +9,26 @@ import Loading from '../components/Loading'
 
 const Home: NextPage = () => {
   const [ loading, setLoading ] = useState<Boolean>(true)
+  const time = useRef<Date>(new Date())
+
+  const handleLoading = (start: Date | undefined) => {
+    if (!start) return
+    
+    const now = new Date()
+    const timeDiff = now.getTime() - start.getTime()
+
+    if (timeDiff > 1200) {
+      setLoading(false)
+    } else {
+      setTimeout(() => {
+        setLoading(false)
+      }, 1200 - timeDiff)
+    }
+  }
   
   useEffect(() => {
-    window.addEventListener("load", () => setLoading(false))
+    time.current = new Date()
+    window.addEventListener("load", () => handleLoading(time.current))
   })
  
   return (
