@@ -6,8 +6,8 @@ const Loading = () => {
     <div className={styles["loading-container"]}>
       <Loader
         type="MutatingDots"
-        color="gray"
-        secondaryColor="gray"
+        color="black"
+        secondaryColor="black"
         height={80}
         width={80}
         timeout={0}

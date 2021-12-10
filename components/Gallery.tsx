@@ -1,7 +1,12 @@
 import Work from './Work'
 import styles from '../styles/components/Gallery.module.scss'
+import { WorkProps } from '../types/Work'
 
-const Gallery = (props) =>  {
+type Props = {
+  works: WorkProps[]
+}
+
+const Gallery = (props: Props) =>  {
   return (
     <div className={styles["gallery-container"]}>
       {
