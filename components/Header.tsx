@@ -4,7 +4,7 @@ import styles from '../styles/components/Header.module.scss'
 const Header = () => {
   return (
     <div className={styles["header"]}>
-      <text>永眠</text>
+      <span className={styles["header-logo"]}>永眠</span>
       <MenuButton />
     </div>
   )
