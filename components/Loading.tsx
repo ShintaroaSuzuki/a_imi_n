@@ -5,8 +5,9 @@ const Loading = () => {
   return (
     <div className={styles["loading-container"]}>
       <Loader
-        type="ThreeDots"
+        type="MutatingDots"
         color="gray"
+        secondaryColor="gray"
         height={80}
         width={80}
         timeout={0}
