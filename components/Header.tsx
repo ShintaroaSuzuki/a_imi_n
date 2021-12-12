@@ -4,7 +4,7 @@ import styles from '../styles/components/Header.module.scss'
 const Header = ({loading}: { loading: Boolean }) => {
   return (
     <div className={loading ? styles["header-loaded"] : styles["header"]}>
-      <span className={loading ? styles["header-logo-loaded"] : styles["header-logo"]}>永眠</span>
+      <span className={loading ? styles["header-logo-loaded"] : styles["header-logo"]}>永海</span>
       <MenuButton loading={loading} />
     </div>
   )
