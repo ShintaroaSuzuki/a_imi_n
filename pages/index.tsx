@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           </video>
         </div>
         */}
-        <AutoplayVideo videoUrl="background.mp4" />
+        <AutoplayVideo videoUrl="background.mp4" loading={loading}/>
         <Gallery 
           loading={loading}
           works={
