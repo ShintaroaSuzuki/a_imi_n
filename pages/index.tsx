@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
+import { VideoTag } from 'react-video-tag'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import MailForm from '../components/MailForm'
@@ -43,14 +45,9 @@ const Home: NextPage = () => {
       <main className={styles["main"]}>
         {loading && <Loading />}
         <Header loading={loading} />
-        {/* 
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
-          <video playsInline autoPlay loop muted className={styles["background-video"]} >
-            <source src="background.mp4" type="video/mp4" />
-          </video>
+          <VideoTag src="/background.mp4" playsInline autoPlay loop muted className={styles["background-video"]} />
         </div>
-        */}
-        <AutoplayVideo videoUrl="background.mp4" loading={loading}/>
         <Gallery 
           loading={loading}
           works={
