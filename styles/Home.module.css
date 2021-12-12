@@ -128,7 +128,7 @@
   pointer-events: none;
 }
 
-video::-webkit-media-controls {
+.background-video::-webkit-media-controls {
   display: none;
 }
 
