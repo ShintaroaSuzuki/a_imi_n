@@ -26,6 +26,11 @@
   justify-content: center;
 }
 
+.menuContainer-loaded {
+  display: none;
+  overflow: hidden;
+}
+
 .menuBar {
   width: 100%;
   height: 1px;

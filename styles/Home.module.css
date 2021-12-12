@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.main-hidden {
+  display: none;
+}
+
 .footer {
   display: flex;
   flex: 1;
@@ -114,7 +118,7 @@
   }
 }
 
-.video-container {
+.video-container-loaded {
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -125,6 +129,10 @@
 
 .background-video {
   height: 100vh;
+}
+
+.background-video-loaded {
+  display: none;
 }
 
 @keyframes animate {
@@ -141,7 +149,7 @@
   }
 }
 
-.video-container-animated {  
+.video-container-loaded {  
   animation-name: animate;
   animation-duration: 2.5s;
   animation-timing-function: ease;

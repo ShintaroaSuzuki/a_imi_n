@@ -19,7 +19,13 @@ const Loading = () => {
         setFillWidth();
       }
 
-      window.addEventListener('resize', handleResize);
+      const disableScroll = (event: Event) => {
+        event.preventDefault()
+      }
+
+      window.addEventListener('resize', handleResize, { passive: true });
+
+      document.addEventListener('touchmove', disableScroll, { passive: false })
 
       handleResize()
     }, []
@@ -31,8 +37,8 @@ const Loading = () => {
         type="MutatingDots"
         color="black"
         secondaryColor="black"
-        height={80}
-        width={80}
+        height={100}
+        width={100}
         timeout={0}
       />
     </div>
