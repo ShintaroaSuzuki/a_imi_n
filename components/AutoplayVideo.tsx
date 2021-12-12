@@ -50,7 +50,9 @@ const AutoplayVideo = ({ videoUrl, loading }: Props) => {
     }
   }, []);
 
-  return (
+  return shouldUseImage ? (
+    <Image src={videoUrl} alt="Muted Video" height={400} width={300} objectFit="cover" />
+  ) : (
     <div
       ref={videoParentRef}
       className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}
