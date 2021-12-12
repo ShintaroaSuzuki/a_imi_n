@@ -125,6 +125,7 @@
 
 .background-video {
   height: 100vh;
+  pointer-events: none;
 }
 
 @keyframes animate {
