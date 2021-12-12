@@ -6,9 +6,10 @@ import Header from '../components/Header'
 import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
 import Loading from '../components/Loading'
+import AutoplayVideo from '../components/AutoplayVideo'
 
 const Home: NextPage = () => {
-  const [ loading, setLoading ] = useState<Boolean>(false)
+  const [ loading, setLoading ] = useState<Boolean>(true)
   const time = useRef<Date>(new Date())
 
   const handleLoading = (start: Date | undefined) => {
@@ -43,9 +44,12 @@ const Home: NextPage = () => {
         {loading && <Loading />}
         <Header loading={loading} />
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
+        {/* 
           <video playsInline autoPlay loop muted className={styles["background-video"]} >
             <source src="background.mp4" type="video/mp4" />
           </video>
+        */}
+          <AutoplayVideo videoUrl="background.mp4" />
         </div>
         <Gallery 
           loading={loading}
