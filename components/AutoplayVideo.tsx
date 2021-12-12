@@ -4,9 +4,10 @@ import styles from '../styles/components/AutoplayVideo.module.scss'
 
 type Props = {
   videoUrl: string;
+  loading: Boolean;
 }
 
-const AutoplayVideo = ({ videoUrl }: Props) => {
+const AutoplayVideo = ({ videoUrl, loading }: Props) => {
   const videoParentRef = useRef<HTMLDivElement>(null);
   const [shouldUseImage, setShouldUseImage] = useState(false);
   useEffect(() => {
@@ -54,7 +55,7 @@ const AutoplayVideo = ({ videoUrl }: Props) => {
   ) : (
     <div
       ref={videoParentRef}
-      className={styles["background-video"]}
+      className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}
       dangerouslySetInnerHTML={{
         __html: `
         <video
