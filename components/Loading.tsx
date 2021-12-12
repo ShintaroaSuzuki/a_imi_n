@@ -25,7 +25,7 @@ const Loading = () => {
 
       window.addEventListener('resize', handleResize, { passive: true });
 
-      document.addEventListener('touchmove', disableScroll, { passive: false })
+      // document.addEventListener('touchmove', disableScroll, { passive: false })
 
       handleResize()
     }, []
