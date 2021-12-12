@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         {loading && <Loading />}
         <Header loading={loading} />
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
-          <video autoPlay loop muted src="background.mp4" className={styles["background-video"]} />
+          <video playsInline autoPlay loop muted src="background.mp4" className={styles["background-video"]} />
         </div>
         <Gallery 
           loading={loading}

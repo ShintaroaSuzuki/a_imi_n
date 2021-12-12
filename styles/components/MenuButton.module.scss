@@ -51,9 +51,9 @@
   height: 1px;
   background: black;
   position: relative;
-  margin-top: 10px
 }
 
 .menuBar-clicked:nth-child(2) {
   animation-name: click-short;
+  margin-top: 8px;
 }
