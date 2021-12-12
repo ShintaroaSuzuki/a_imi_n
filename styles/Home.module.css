@@ -118,21 +118,13 @@
   }
 }
 
-.video-container-loaded {
-  height: 100vh;
-  width: 100%;
+.video-conteiner-loaded {
+  display: none;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .background-video {
   height: 100vh;
-}
-
-.background-video-loaded {
-  display: none;
 }
 
 @keyframes animate {
@@ -149,7 +141,7 @@
   }
 }
 
-.video-container-loaded {  
+.video-container {  
   animation-name: animate;
   animation-duration: 2.5s;
   animation-timing-function: ease;

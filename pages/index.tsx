@@ -8,7 +8,7 @@ import Gallery from '../components/Gallery'
 import Loading from '../components/Loading'
 
 const Home: NextPage = () => {
-  const [ loading, setLoading ] = useState<Boolean>(true)
+  const [ loading, setLoading ] = useState<Boolean>(false)
   const time = useRef<Date>(new Date())
 
   const handleLoading = (start: Date | undefined) => {
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         {loading && <Loading />}
         <Header loading={loading} />
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
-          <video autoPlay loop muted src="background.mp4" className={loading ? styles["background-video-loaded"] : styles["background-video"]} />
+          <video autoPlay loop muted src="background.mp4" className={styles["background-video"]} />
         </div>
         <Gallery 
           loading={loading}
