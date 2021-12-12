@@ -9,7 +9,7 @@ import Loading from '../components/Loading'
 import AutoplayVideo from '../components/AutoplayVideo'
 
 const Home: NextPage = () => {
-  const [ loading, setLoading ] = useState<Boolean>(false)
+  const [ loading, setLoading ] = useState<Boolean>(true)
   const time = useRef<Date>(new Date())
 
   const handleLoading = (start: Date | undefined) => {
