@@ -11,7 +11,7 @@ import Loading from '../components/Loading'
 import AutoplayVideo from '../components/AutoplayVideo'
 
 const Home: NextPage = () => {
-  const [ loading, setLoading ] = useState<Boolean>(false)
+  const [ loading, setLoading ] = useState<Boolean>(true)
   const time = useRef<Date>(new Date())
 
   const handleLoading = (start: Date | undefined) => {
@@ -56,6 +56,7 @@ const Home: NextPage = () => {
               { imageUrl: "/work2.jpg", title: "死んでるみたいに生きている" },
               { imageUrl: "/work3.jpg", title: "もう良い子じゃないよ" },
               { imageUrl: "/work4.jpg", title: "君のためになんか死んでやらない" },
+              { imageUrl: "/work5.jpg", title: "共依存" }
             ]
           }
         />
