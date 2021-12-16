@@ -6,3 +6,10 @@
   width: 100vw;
   z-index: 99999;
 }
+
+.header {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

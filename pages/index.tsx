@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { VideoTag } from 'react-video-tag'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
+import MenuButton from '../components/MenuButton'
 import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
 import Loading from '../components/Loading'
@@ -44,7 +45,9 @@ const Home: NextPage = () => {
       <main className={styles["main"]}>
         {loading && <Loading />}
         <MenuModal/>
-        <Header loading={loading} />
+        <Header loading={loading} headerTitle="永海">
+          <MenuButton loading={loading}/>
+        </Header>
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
           <VideoTag src="/background.mp4" playsInline autoPlay loop muted className={styles["background-video"]} />
         </div>

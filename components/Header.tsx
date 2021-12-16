@@ -1,11 +1,17 @@
-import MenuButton from './MenuButton'
 import styles from '../styles/components/Header.module.scss'
+import { ReactElement } from 'react'
 
-const Header = ({loading}: { loading: Boolean }) => {
+type Props = {
+  loading?: Boolean;
+  headerTitle?: string;
+  children: ReactElement;
+}
+
+const Header = ({ loading, headerTitle, children }: Props) => {
   return (
     <div className={loading ? styles["header-loaded"] : styles["header"]}>
-      <span className={loading ? styles["header-logo-loaded"] : styles["header-logo"]}>永海</span>
-      <MenuButton loading={loading} />
+      {children}
+      {headerTitle && <span className={loading ? styles["header-logo-loaded"] : styles["header-logo"]}>{headerTitle}</span>}
     </div>
   )
 }

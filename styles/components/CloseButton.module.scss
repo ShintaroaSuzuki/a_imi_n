@@ -3,8 +3,6 @@
   width: 24px;
   height: 24px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
   position: absolute;
 }
 
@@ -13,9 +11,11 @@
   width: 48px;
   height: 1px;
   position: absolute;
-  transform: rotate(-45deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .bar:nth-child(2) {
-  transform: rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
