@@ -1,0 +1,21 @@
+.container {
+  left: 5%;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.bar {
+  background-color: white;
+  width: 48px;
+  height: 1px;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.bar:nth-child(2) {
+  transform: rotate(45deg);
+}

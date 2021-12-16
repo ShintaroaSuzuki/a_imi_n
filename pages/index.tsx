@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { VideoTag } from 'react-video-tag'
 import styles from '../styles/Home.module.css'
@@ -8,7 +7,7 @@ import Header from '../components/Header'
 import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
 import Loading from '../components/Loading'
-import AutoplayVideo from '../components/AutoplayVideo'
+import MenuModal from '../components/MenuModal'
 
 const Home: NextPage = () => {
   const [ loading, setLoading ] = useState<Boolean>(true)
@@ -44,6 +43,7 @@ const Home: NextPage = () => {
 
       <main className={styles["main"]}>
         {loading && <Loading />}
+        <MenuModal/>
         <Header loading={loading} />
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
           <VideoTag src="/background.mp4" playsInline autoPlay loop muted className={styles["background-video"]} />
