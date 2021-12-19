@@ -5,7 +5,7 @@ import CloseButton from './CloseButton'
 const MenuModal = () => {
   return (
     <div className={styles["container"]}>
-      <Header>
+      <Header backgroundColor="none">
         <CloseButton />
       </Header>
       <text>ギャラリー</text>

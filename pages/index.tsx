@@ -45,7 +45,7 @@ const Home: NextPage = () => {
       <main className={styles["main"]}>
         {loading && <Loading />}
         <MenuModal/>
-        <Header loading={loading} headerTitle="永海">
+        <Header loading={loading} headerTitle="永海" backgroundColor="white">
           <MenuButton loading={loading}/>
         </Header>
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
