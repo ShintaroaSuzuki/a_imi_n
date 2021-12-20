@@ -12,6 +12,7 @@ import MenuModal from '../components/MenuModal'
 
 const Home: NextPage = () => {
   const [ loading, setLoading ] = useState<Boolean>(true)
+  const [ menuOpend, setMenuOpend ] = useState<Boolean>(false)
   const time = useRef<Date>(new Date())
 
   const handleLoading = (start: Date | undefined) => {
@@ -44,7 +45,7 @@ const Home: NextPage = () => {
 
       <main className={styles["main"]}>
         {loading && <Loading />}
-        <MenuModal/>
+        {menuOpend && <MenuModal/>}
         <Header loading={loading} headerTitle="永海" backgroundColor="white">
           <MenuButton loading={loading}/>
         </Header>
