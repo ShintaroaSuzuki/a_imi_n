@@ -1,7 +1,12 @@
 import styles from '../styles/components/MenuButton.module.scss' 
-import { useState } from 'react'
+import { useState, Dispatch, SetStateAction } from 'react'
 
-const MenuButton = ({loading, setMenuOpened}: {loading: Boolean, setMenuOpened: (menuOpend: Boolean) => void}) => {
+type Props = {
+  loading: Boolean;
+  setMenuOpened: Dispatch<SetStateAction<Boolean>>;
+}
+
+const MenuButton = ({loading, setMenuOpened}: Props ) => {
   const [clicked, setClicked] = useState<Boolean>(false);
 
   const _onClick = () => {
@@ -10,7 +15,7 @@ const MenuButton = ({loading, setMenuOpened}: {loading: Boolean, setMenuOpened: 
   }
 
   return (
-    <div className={loading ? styles["menuContainer-loaded"] : styles["menuContainer"]} onClick={() => setClicked(!clicked)}>
+    <div className={loading ? styles["menuContainer-loaded"] : styles["menuContainer"]} onClick={() => _onClick()}>
       <div className={clicked ? styles['menuBar-clicked'] : styles['menuBar'] } />
       <div className={clicked ? styles['menuBar-clicked'] : styles['menuBar'] } />
     </div>

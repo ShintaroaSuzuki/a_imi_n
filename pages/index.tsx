@@ -45,9 +45,9 @@ const Home: NextPage = () => {
 
       <main className={styles["main"]}>
         {loading && <Loading />}
-        {menuOpend && <MenuModal/>}
+        {menuOpend && <MenuModal setMenuOpened={setMenuOpend} />}
         <Header loading={loading} headerTitle="永海" backgroundColor="white">
-          <MenuButton loading={loading}/>
+          <MenuButton loading={loading} setMenuOpened={setMenuOpend}/>
         </Header>
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
           <VideoTag src="/background.mp4" playsInline autoPlay loop muted className={styles["background-video"]} />
