@@ -65,6 +65,7 @@ const Home: NextPage = () => {
               { imageUrl: "/work5.jpg", title: "依存させてよ" },
               { imageUrl: "/work6.jpg", title: "いいや、さようなら。" },
               { imageUrl: "/work7.jpg", title: "おしまいにしようか、" },
+              { imageUrl: "/work8.jpg", title: "愛なんか知らなきゃよかった"}
             ]
           }
         />
