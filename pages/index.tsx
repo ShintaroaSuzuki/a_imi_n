@@ -9,11 +9,13 @@ import MailForm from '../components/MailForm'
 import Gallery from '../components/Gallery'
 import Loading from '../components/Loading'
 import MenuModal from '../components/MenuModal'
+import { useSelector } from 'react-redux'
+import { selectMenuOpened } from '../slices/buttonState'
 
 const Home: NextPage = () => {
   const [ loading, setLoading ] = useState<Boolean>(true)
-  const [ menuOpend, setMenuOpend ] = useState<Boolean>(false)
   const time = useRef<Date>(new Date())
+  const menuOpened = useSelector(selectMenuOpened)
 
   const handleLoading = (start: Date | undefined) => {
     if (!start) return
@@ -45,9 +47,9 @@ const Home: NextPage = () => {
 
       <main className={styles["main"]}>
         {loading && <Loading />}
-        {menuOpend && <MenuModal setMenuOpened={setMenuOpend} />}
+        {menuOpened && <MenuModal />}
         <Header loading={loading} headerTitle="永海" backgroundColor="white">
-          <MenuButton loading={loading} setMenuOpened={setMenuOpend}/>
+          <MenuButton loading={loading} />
         </Header>
         <div className={loading ? styles["video-conteiner-loaded"] : styles["video-container"]}>
           <VideoTag src="/background.mp4" playsInline autoPlay loop muted className={styles["background-video"]} />

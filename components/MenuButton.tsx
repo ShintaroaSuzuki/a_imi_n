@@ -1,18 +1,21 @@
 import styles from '../styles/components/MenuButton.module.scss' 
-import { useState, Dispatch, SetStateAction } from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { changeMenuOpened } from '../slices/buttonState'
 
 type Props = {
   loading: Boolean;
-  setMenuOpened: Dispatch<SetStateAction<Boolean>>;
 }
 
-const MenuButton = ({loading, setMenuOpened}: Props ) => {
+const MenuButton = ({ loading }: Props ) => {
   const [clicked, setClicked] = useState<Boolean>(false);
 
   const _onClick = () => {
     setClicked(!clicked)
-    setMenuOpened(true)
+    dispatch(changeMenuOpened(true))
   }
+  
+  const dispatch = useDispatch()
 
   return (
     <div className={loading ? styles["menuContainer-loaded"] : styles["menuContainer"]} onClick={() => _onClick()}>

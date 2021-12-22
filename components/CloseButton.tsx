@@ -1,14 +1,13 @@
 import styles from '../styles/components/CloseButton.module.scss'
-import { Dispatch, SetStateAction } from 'react'
+import { useDispatch } from 'react-redux'
+import { changeMenuOpened } from '../slices/buttonState'
 
-type Props = {
-  setMenuOpened: Dispatch<SetStateAction<Boolean>>;  
-}
-
-const CloseButton = ({ setMenuOpened }: Props) => {
+const CloseButton = () => {
   const _onClick = () => {
-    setMenuOpened(false)
+    dispatch(changeMenuOpened(false))
   }
+
+  const dispatch = useDispatch()
   
   return (
     <div className={styles["container"]} onClick={() => _onClick()}>
