@@ -1,10 +1,11 @@
 import styles from '../styles/components/CloseButton.module.scss'
 import { useDispatch } from 'react-redux'
-import { changeMenuOpened } from '../slices/buttonState'
+import { changeMenuOpened, changeClicked } from '../slices/buttonState'
 
 const CloseButton = () => {
   const _onClick = () => {
     dispatch(changeMenuOpened(false))
+    dispatch(changeClicked(false))
   }
 
   const dispatch = useDispatch()
