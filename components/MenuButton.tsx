@@ -9,8 +9,8 @@ type Props = {
 const MenuButton = ({ loading }: Props ) => {
 
   const _onClick = () => {
-    dispatch(changeMenuOpened(true))
     dispatch(changeClicked(true))
+    setTimeout(() => dispatch(changeMenuOpened(true)), 300)
   }
   
   const dispatch = useDispatch()
