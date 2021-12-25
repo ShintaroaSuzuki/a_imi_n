@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { VideoTag } from 'react-video-tag'
 import styles from '../styles/Home.module.css'
@@ -69,6 +70,9 @@ const Home: NextPage = () => {
             ]
           }
         />
+        <Link href="/gallery">
+          <a>more ...</a>
+        </Link>
         <MailForm loading={loading} />
       </main>
 
